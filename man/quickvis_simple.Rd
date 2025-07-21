@@ -2,7 +2,7 @@
 % Please edit documentation in R/quickvis_simple.R
 \name{quickvis_simple}
 \alias{quickvis_simple}
-\title{Create point plot quickly.}
+\title{Useful to create a simple plot quickly. Uses ggplot to create the plot. Alternative to ggplot if you want to create a simple plot to visualise data quicker with less complex code. Allows to add more ggplot functions.}
 \usage{
 quickvis_simple(
   data = NULL,
@@ -11,26 +11,45 @@ quickvis_simple(
   geom = "point",
   theme = "none",
   facet_wrap = "F",
-  color = NULL
+  col = NULL
 )
 }
 \arguments{
-\item{data}{dataset}
+\item{data}{Default dataset to use for plot.}
 
-\item{x}{x-axis parameter}
+\item{x}{Variable which will be mapped to the x-axis of the plot.}
 
-\item{y}{y-axis parameter}
+\item{y}{Variable which will be mapped to the y-axis of the plot.}
 
-\item{theme}{decide theme}
+\item{geom}{Decide geom used no geom will result in the usage of \code{\link[ggplot2:geom_point]{ggplot2::geom_point()}}.}
 
-\item{facet_wrap}{decide if facetwrap should be enabled}
+\item{theme}{Lets you decide which theme you want to use. No theme will be applied if left empty.}
+
+\item{facet_wrap}{Decide which variable you want to use for a facet_wrap. When left empty there will be no facet wrap.}
+
+\item{col}{Decides variable of dataset which will color the geom. Not colors will be applied if left empty.}
 }
 \value{
 ggplot
 }
 \description{
-Create point plot quickly.
+Useful to create a simple plot quickly. Uses ggplot to create the plot. Alternative to ggplot if you want to create a simple plot to visualise data quicker with less complex code. Allows to add more ggplot functions.
 }
 \examples{
-quickvis_simple(mtcars, "mpg", "cyl")
+quickvis_simple(mtcars, "hp", "cyl")
+quickvis_simple(mtcars, "hp", geom = "bar")
+quickvis_simple(mtcars, "mpg", "cyl", "line", "bw")
+
+# using facet_wrap argument
+quickvis_simple(mtcars, "cyl", "hp", facet_wrap = "gear")
+
+# using col argument
+quickvis_simple(mtcars, "gear", "hp", col = "vs")
+
+# U can also add other ggplot2 functions after the function to further enhance the plot
+quickvis_simple(mtcars, "wt", "cyl", "point", "minimal") +
+geom_line() +
+labs(title = "Title", x = "X", y = "Y")
+
+
 }
