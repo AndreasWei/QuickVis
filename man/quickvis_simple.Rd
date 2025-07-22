@@ -2,7 +2,7 @@
 % Please edit documentation in R/quickvis_simple.R
 \name{quickvis_simple}
 \alias{quickvis_simple}
-\title{Useful to create a simple plot quickly. Uses ggplot to create the plot. Alternative to ggplot if you want to create a simple plot to visualise data quicker with less complex code. Allows to add more ggplot functions.}
+\title{Useful to create a simple plot quickly. Uses ggplot to create the plot. Alternative to just using ggplot if you want to create a simple plot to visualise data quicker with less complex code.}
 \usage{
 quickvis_simple(
   data = NULL,
@@ -21,11 +21,11 @@ quickvis_simple(
 
 \item{y}{Variable which will be mapped to the y-axis of the plot.}
 
-\item{geom}{Decide geom used no geom will result in the usage of \code{\link[ggplot2:geom_point]{ggplot2::geom_point()}}.}
+\item{geom}{Decides geom used. No input will result in the usage of \code{\link[ggplot2:geom_point]{ggplot2::geom_point()}}.}
 
 \item{theme}{Lets you decide which theme you want to use. No theme will be applied if left empty.}
 
-\item{facet_wrap}{Decide which variable you want to use for a facet_wrap. When left empty there will be no facet wrap.}
+\item{facet_wrap}{Decides which variable you want to use for a facet_wrap. When left empty there will be no facet wrap.}
 
 \item{col}{Decides variable of dataset which will color the geom. Not colors will be applied if left empty.}
 }
@@ -33,7 +33,7 @@ quickvis_simple(
 ggplot
 }
 \description{
-Useful to create a simple plot quickly. Uses ggplot to create the plot. Alternative to ggplot if you want to create a simple plot to visualise data quicker with less complex code. Allows to add more ggplot functions.
+Useful to create a simple plot quickly. Uses ggplot to create the plot. Alternative to just using ggplot if you want to create a simple plot to visualise data quicker with less complex code.
 }
 \examples{
 quickvis_simple(mtcars, "hp", "cyl")

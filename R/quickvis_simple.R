@@ -1,11 +1,11 @@
-#' Useful to create a simple plot quickly. Uses ggplot to create the plot. Alternative to ggplot if you want to create a simple plot to visualise data quicker with less complex code. Allows to add more ggplot functions.
+#' Useful to create a simple plot quickly. Uses ggplot to create the plot. Alternative to just using ggplot if you want to create a simple plot to visualise data quicker with less complex code.
 #'
 #' @param data Default dataset to use for plot.
 #' @param x Variable which will be mapped to the x-axis of the plot.
 #' @param y Variable which will be mapped to the y-axis of the plot.
-#' @param geom Decide geom used no geom will result in the usage of [ggplot2::geom_point()].
+#' @param geom Decides geom used. No input will result in the usage of [ggplot2::geom_point()].
 #' @param theme Lets you decide which theme you want to use. No theme will be applied if left empty.
-#' @param facet_wrap Decide which variable you want to use for a facet_wrap. When left empty there will be no facet wrap.
+#' @param facet_wrap Decides which variable you want to use for a facet_wrap. When left empty there will be no facet wrap.
 #' @param col Decides variable of dataset which will color the geom. Not colors will be applied if left empty.
 #'
 #' @returns ggplot

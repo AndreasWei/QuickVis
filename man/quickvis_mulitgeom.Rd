@@ -2,30 +2,47 @@
 % Please edit documentation in R/quickvis_multigeom.R
 \name{quickvis_mulitgeom}
 \alias{quickvis_mulitgeom}
-\title{Allows to use multiple different geoms with different aesthetic mapping. Intended to just give an first impression how the different geoms would look as a plot. Lacks functionality compared to using the normal ggplot function. For a bit more functionality use \code{\link[=quickvis_simple]{quickvis_simple()}} and add further geoms after the function.}
+\title{Allows to use up to three different geoms with different aesthetic mapping. Intended to just give an first impression how the different geoms would look as a plot. Lacks functionality compared to using the normal ggplot function. For a bit more functionality use \code{\link[=quickvis_simple]{quickvis_simple()}} and add further geoms after the function.
+Works with geoms starting with "geom_", doesn't work for inputs: abline, hline, vline, contour, contour_filled, errorbar, errorbarh, hex, crossbar, errorbar, linerange, pointrange, map, path, line, qq_line, qq, quantile, ribbon, segmend, spoke, label, text, rect, sf, sf_label, sf_text.}
 \usage{
 quickvis_mulitgeom(
   data = NULL,
-  geom1 = c("x", "y", "geom"),
-  geom2 = c("x", "y", "geom"),
-  geom3 = c("x", "y", "geom")
+  geom1 = list(NULL, NULL, NULL, NULL),
+  geom2 = list(NULL, NULL, NULL, NULL),
+  geom3 = list(NULL, NULL, NULL, NULL)
 )
 }
 \arguments{
 \item{data}{Default dataset to use for plot.}
 
-\item{geom1}{First of 3 geoms available to add. Plot as follows "c ("Mapping for x-axis", "Mapping for y- Axis", "geom").}
+\item{geom1}{A List specifying the mapping for x-axis, y-axis, the geom and a specific color.}
 
-\item{geom2}{Plot as follows "c ("Mapping for x-axis", "Mapping for y- Axis", "geom").}
+\item{geom2}{A List specifying the mapping for x-axis, y-axis, the geom and a specific color.}
 
-\item{geom3}{Plot as follows "c ("Mapping for x-axis", "Mapping for y- Axis", "geom").}
+\item{geom3}{A List specifying the mapping for x-axis, y-axis, the geom and a specific color.}
 }
 \value{
 ggplot
 }
 \description{
-Allows to use multiple different geoms with different aesthetic mapping. Intended to just give an first impression how the different geoms would look as a plot. Lacks functionality compared to using the normal ggplot function. For a bit more functionality use \code{\link[=quickvis_simple]{quickvis_simple()}} and add further geoms after the function.
+Allows to use up to three different geoms with different aesthetic mapping. Intended to just give an first impression how the different geoms would look as a plot. Lacks functionality compared to using the normal ggplot function. For a bit more functionality use \code{\link[=quickvis_simple]{quickvis_simple()}} and add further geoms after the function.
+Works with geoms starting with "geom_", doesn't work for inputs: abline, hline, vline, contour, contour_filled, errorbar, errorbarh, hex, crossbar, errorbar, linerange, pointrange, map, path, line, qq_line, qq, quantile, ribbon, segmend, spoke, label, text, rect, sf, sf_label, sf_text.
 }
 \examples{
-quickvis_mulitgeom(mtcars, c ("hp", "cyl", "point"), c ("hp", "cyl", "line"))
+quickvis_mulitgeom(mtcars, list("hp", NULL, "density", "blue"))
+quickvis_mulitgeom(mtcars, list("hp", "wt", "col", "blue"))
+
+# For two geoms
+quickvis_mulitgeom(mtcars, list("hp", "cyl", "point", NULL), list("hp", "cyl", "line", NULL))
+quickvis_mulitgeom(mtcars, list("hp", "cyl", "point", NULL), list("hp", "gear", "line", "red"))
+quickvis_mulitgeom(mtcars, list("gear", "hp", "smooth", "purple"), list("gear", "hp", "point", "red"))
+
+# Or for three geoms
+quickvis_mulitgeom(mtcars, list("hp", "wt", "violin", "blue"), list("hp", "wt", "jitter", NULL), list("hp", "wt", "boxplot", "green"))
+
+# Use ggplot2 function to further enhance the plot
+quickvis_mulitgeom(mtcars, list("hp", "cyl", "density_2d_filled", NULL))
++labs(title = "ExamplePlot", y = "Cylinder", x = "Horsepower", fill = "Level")
+
+
 }

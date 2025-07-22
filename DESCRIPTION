@@ -1,16 +1,11 @@
 Package: QuickVis
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
+Title: Easier -to-use alternative to using ggplot functions, with less functionality
+Version: 1.0.0
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+    person("Andreas Alexander", "Weiß", role = c("aut", "cre"), email ="Andreas.Weiss@campus.lmu.de")
+Description: The package is supposed to be a faster and easier -to-use alternative to using normal ggplot functions, with less functionality. Potentially useful when plotting simple plots, the main purpose is about giving a first impression of how the data looks visualised.
 License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
     license
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
-Imports: 
-    ggplot2
-Suggests: 
-    testthat (>= 3.0.0)
-Config/testthat/edition: 3
