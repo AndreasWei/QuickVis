@@ -29,13 +29,11 @@ quickvis_simple(
 
 \item{col}{Decides variable of dataset which will color the geom. Not colors will be applied if left empty.}
 }
-\value{
-ggplot
-}
 \description{
 Useful to create a simple plot quickly. Uses ggplot to create the plot. Alternative to just using ggplot if you want to create a simple plot to visualise data quicker with less complex code.
 }
 \examples{
+
 quickvis_simple(mtcars, "hp", "cyl")
 quickvis_simple(mtcars, "hp", geom = "bar")
 quickvis_simple(mtcars, "mpg", "cyl", "line", "bw")
@@ -50,6 +48,5 @@ quickvis_simple(mtcars, "gear", "hp", col = "vs")
 quickvis_simple(mtcars, "wt", "cyl", "point", "minimal") +
 geom_line() +
 labs(title = "Title", x = "X", y = "Y")
-
 
 }

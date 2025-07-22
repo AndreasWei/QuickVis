@@ -1,6 +1,6 @@
 Package: QuickVis
 Title: Easier -to-use alternative to using ggplot functions, with less functionality
-Version: 1.0.0
+Version: 1.0.1
 Authors@R: 
     person("Andreas Alexander", "Weiß", role = c("aut", "cre"), email ="Andreas.Weiss@campus.lmu.de")
 Description: The package is supposed to be a faster and easier -to-use alternative to using normal ggplot functions, with less functionality. Potentially useful when plotting simple plots, the main purpose is about giving a first impression of how the data looks visualised.

@@ -8,25 +8,24 @@
 #' @param facet_wrap Decides which variable you want to use for a facet_wrap. When left empty there will be no facet wrap.
 #' @param col Decides variable of dataset which will color the geom. Not colors will be applied if left empty.
 #'
-#' @returns ggplot
-#' @export
+#' @examples
 #'
-#' @examples quickvis_simple(mtcars, "hp", "cyl")
-#' @examples quickvis_simple(mtcars, "hp", geom = "bar")
-#' @examples quickvis_simple(mtcars, "mpg", "cyl", "line", "bw")
+#' quickvis_simple(mtcars, "hp", "cyl")
+#' quickvis_simple(mtcars, "hp", geom = "bar")
+#' quickvis_simple(mtcars, "mpg", "cyl", "line", "bw")
 #'
 #' # using facet_wrap argument
-#' @examples quickvis_simple(mtcars, "cyl", "hp", facet_wrap = "gear")
+#' quickvis_simple(mtcars, "cyl", "hp", facet_wrap = "gear")
 #'
 #' # using col argument
-#' @examples quickvis_simple(mtcars, "gear", "hp", col = "vs")
+#' quickvis_simple(mtcars, "gear", "hp", col = "vs")
 #'
 #' # U can also add other ggplot2 functions after the function to further enhance the plot
-#' @examples quickvis_simple(mtcars, "wt", "cyl", "point", "minimal") +
+#' quickvis_simple(mtcars, "wt", "cyl", "point", "minimal") +
 #' geom_line() +
 #' labs(title = "Title", x = "X", y = "Y")
 #'
-#'
+#' @export
 quickvis_simple <- function(data = NULL, x, y, geom = "point", theme = "none", facet_wrap = "F", col = NULL) {
   # Create plot
   plot <- ggplot2::ggplot(data, ggplot2::aes_string(x, y,col = col))

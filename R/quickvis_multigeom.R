@@ -6,26 +6,25 @@
 #' @param geom2 A List specifying the mapping for x-axis, y-axis, the geom and a specific color.
 #' @param geom3 A List specifying the mapping for x-axis, y-axis, the geom and a specific color.
 #'
+#' @examples
 #'
-#' @returns ggplot
-#' @export
 #' # Can be used for one geom
-#' @examples quickvis_mulitgeom(mtcars, list("hp", NULL, "density", "blue"))
-#' @examples quickvis_mulitgeom(mtcars, list("hp", "wt", "col", "blue"))
+#' quickvis_mulitgeom(mtcars, list("hp", NULL, "density", "blue"))
+#' quickvis_mulitgeom(mtcars, list("hp", "wt", "col", "blue"))
 #'
 #' # For two geoms
-#' @examples quickvis_mulitgeom(mtcars, list("hp", "cyl", "point", NULL), list("hp", "cyl", "line", NULL))
-#' @examples quickvis_mulitgeom(mtcars, list("hp", "cyl", "point", NULL), list("hp", "gear", "line", "red"))
-#' @examples quickvis_mulitgeom(mtcars, list("gear", "hp", "smooth", "purple"), list("gear", "hp", "point", "red"))
+#' quickvis_mulitgeom(mtcars, list("hp", "cyl", "point", NULL), list("hp", "cyl", "line", NULL))
+#' quickvis_mulitgeom(mtcars, list("hp", "cyl", "point", NULL), list("hp", "gear", "line", "red"))
+#' quickvis_mulitgeom(mtcars, list("gear", "hp", "smooth", "purple"), list("gear", "hp", "point", "red"))
 #'
 #' # Or for three geoms
-#' @examples quickvis_mulitgeom(mtcars, list("hp", "wt", "violin", "blue"), list("hp", "wt", "jitter", NULL), list("hp", "wt", "boxplot", "green"))
+#' quickvis_mulitgeom(mtcars, list("hp", "wt", "violin", "blue"), list("hp", "wt", "jitter", NULL), list("hp", "wt", "boxplot", "green"))
 #'
 #' # Use ggplot2 function to further enhance the plot
-#' @examples quickvis_mulitgeom(mtcars, list("hp", "cyl", "density_2d_filled", NULL))
+#' quickvis_mulitgeom(mtcars, list("hp", "cyl", "density_2d_filled", NULL))
 #' +labs(title = "ExamplePlot", y = "Cylinder", x = "Horsepower", fill = "Level")
 #'
-#'
+#' @export
 quickvis_mulitgeom <- function (data = NULL, geom1 = list(NULL, NULL, NULL, NULL), geom2 = list(NULL, NULL, NULL, NULL), geom3 = list(NULL, NULL, NULL, NULL)) {
 
   # Check if input list is able to be processed
