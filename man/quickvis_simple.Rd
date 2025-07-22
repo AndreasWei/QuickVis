@@ -2,7 +2,7 @@
 % Please edit documentation in R/quickvis_simple.R
 \name{quickvis_simple}
 \alias{quickvis_simple}
-\title{Useful to create a simple plot quickly. Uses ggplot to create the plot. Alternative to just using ggplot if you want to create a simple plot to visualise data quicker with less complex code.}
+\title{Alternative to just using ggplot if you want to create a simple plot to visualise data quicker with less complex code. Uses ggplot internally to create the plot.}
 \usage{
 quickvis_simple(
   data = NULL,
@@ -30,7 +30,7 @@ quickvis_simple(
 \item{col}{Decides variable of dataset which will color the geom. Not colors will be applied if left empty.}
 }
 \description{
-Useful to create a simple plot quickly. Uses ggplot to create the plot. Alternative to just using ggplot if you want to create a simple plot to visualise data quicker with less complex code.
+Alternative to just using ggplot if you want to create a simple plot to visualise data quicker with less complex code. Uses ggplot internally to create the plot.
 }
 \examples{
 

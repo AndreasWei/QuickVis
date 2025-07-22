@@ -1,4 +1,4 @@
-#' Useful to create a simple plot quickly. Uses ggplot to create the plot. Alternative to just using ggplot if you want to create a simple plot to visualise data quicker with less complex code.
+#' Alternative to just using ggplot if you want to create a simple plot to visualise data quicker with less complex code. Uses ggplot internally to create the plot.
 #'
 #' @param data Default dataset to use for plot.
 #' @param x Variable which will be mapped to the x-axis of the plot.
